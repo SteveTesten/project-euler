@@ -14,12 +14,13 @@ public class problem017
 		String temp_word = "";
 
 		if (args.length>0)
-			System.out.println(Integer.parseInt(args[0]));
+			System.out.println(number_word(Integer.parseInt(args[0])));
 		else
 		{
 			for (int i=min_num; i<=max_num; i++)
 			{
 				temp_word = number_word(i);
+				System.out.println(temp_word);
 				temp_word = temp_word.replace(" ","");
 				temp_word = temp_word.replace("-","");
 
@@ -47,13 +48,13 @@ public class problem017
 		if (num_string.length()==1)
 		{
 			value = Integer.parseInt(Character.toString(num_string.charAt(0)));
-			word_string = word_string + less_than_twenty[value-1];
+			word_string += less_than_twenty[value-1];
 		}
 
 		if (num_string.length()==4)
 		{
 			value = Integer.parseInt(Character.toString(num_string.charAt(0)));
-			word_string = word_string + less_than_twenty[value-1] + " thousand ";
+			word_string += less_than_twenty[value-1] + " thousand ";
 			num_string = num_string.substring(1);
 		}
 
@@ -62,19 +63,19 @@ public class problem017
 			value = Integer.parseInt(Character.toString(num_string.charAt(0)));
 			if (value == 0)
 				if (num%1000!=0)
-					word_string = word_string + "and ";
+					word_string += "and ";
 				else
 					word_string = word_string;
 			else
 			{
 				if (Integer.parseInt(num_string)%100!=0)
 				{
-					word_string = word_string + less_than_twenty[value-1] + " hundred and ";
+					word_string += less_than_twenty[value-1] + " hundred and ";
 					num_string = num_string.substring(1);
 				}
 				else
 				{
-					word_string = word_string + less_than_twenty[value-1] + " hundred";
+					word_string += less_than_twenty[value-1] + " hundred";
 					num_string = num_string.substring(1);
 				}
 			}
@@ -88,16 +89,16 @@ public class problem017
 			{
 				if (Integer.parseInt(num_string)%10!=0)
 				{
-					word_string = word_string + tens[value-2] + "-";
+					word_string += tens[value-2] + "-";
 					num_string = num_string.substring(1);
 					value = Integer.parseInt(Character.toString(num_string.charAt(0)));
 
 					if (value!=0)
-						word_string = word_string + less_than_twenty[value-1];
+						word_string += less_than_twenty[value-1];
 				}
 				else
 				{
-					word_string = word_string + tens[value-2];
+					word_string += tens[value-2];
 				}
 			}
 			else
@@ -105,7 +106,7 @@ public class problem017
 				value = Integer.parseInt(num_string);
 
 				if (value != 0)
-					word_string = word_string + less_than_twenty[value-1];
+					word_string += less_than_twenty[value-1];
 			}
 		}
 
