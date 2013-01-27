@@ -7,7 +7,7 @@ large to be calculated with a long (must use BigInteger).
 
 The answer is (40!/(20!*20!))=137846528820.
 
-See problem015b.java for the correct code.
+See problem015b.java for code that replicates pascal's triangle.
 */
 
 public class problem015
