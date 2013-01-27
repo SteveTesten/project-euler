@@ -11,13 +11,21 @@ public class problem017
 		int min_num = 1; //min: 1
 		int max_num = 1000; //max: 9999
 		int sum = 0;
+		String temp_word = "";
 
 		if (args.length>0)
 			System.out.println(Integer.parseInt(args[0]));
 		else
 		{
 			for (int i=min_num; i<=max_num; i++)
-				System.out.println(number_word(i));
+			{
+				temp_word = number_word(i);
+				temp_word = temp_word.replace(" ","");
+				temp_word = temp_word.replace("-","");
+
+				sum = sum + (temp_word.length());
+			}
+			System.out.println(sum);
 		}
 	}
 
