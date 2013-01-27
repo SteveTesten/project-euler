@@ -20,7 +20,7 @@ public class problem017
 			for (int i=min_num; i<=max_num; i++)
 			{
 				temp_word = number_word(i);
-				System.out.println(temp_word);
+				//System.out.println(temp_word);
 				temp_word = temp_word.replace(" ","");
 				temp_word = temp_word.replace("-","");
 
