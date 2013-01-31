@@ -1,7 +1,10 @@
 //Find the sum of the digits in the number 100!
 
+//To compile: javac problem020.java ../common/tools.java
+
 
 import java.math.BigInteger;
+import common.tools;
 
 public class problem020
 {
@@ -10,28 +13,16 @@ public class problem020
 		long num = 100;
 		
 
-		BigInteger num_bigint = factorial(num);
+		BigInteger num_bigint = tools.factorial(num);
 		String num_string = num_bigint.toString();
 		int temp_sum = 0;
 
 		for (int j=0; j<num_string.length(); j++)
 		{
-			temp_value += Integer.parseInt(Character.toString(num_string.charAt(j)));
+			temp_sum += Integer.parseInt(Character.toString(num_string.charAt(j)));
 		}
 
-		System.out.println(temp_value);
+		System.out.println(temp_sum);
 		
-	}
-
-	public static BigInteger factorial(long num)
-	{
-		BigInteger temp_num = BigInteger.valueOf(1);
-
-		for (long i = 1; i <= num; i++)
-		{
-			temp_num = temp_num.multiply(BigInteger.valueOf(i));
-		}
-
-		return temp_num;
 	}
 }

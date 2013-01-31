@@ -1,3 +1,6 @@
+package common;
+
+import java.math.BigInteger;
 
 public class tools
 {
@@ -36,6 +39,18 @@ public class tools
 		}
 		
 		return result;
+	}
+
+	public static BigInteger factorial(long num)
+	{
+		BigInteger temp_num = BigInteger.valueOf(1);
+
+		for (long i = 1; i <= num; i++)
+		{
+			temp_num = temp_num.multiply(BigInteger.valueOf(i));
+		}
+
+		return temp_num;
 	}
 
 }
