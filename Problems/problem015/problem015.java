@@ -10,29 +10,32 @@ The answer is (40!/(20!*20!))=137846528820.
 See problem015b.java for code that replicates pascal's triangle.
 */
 
+import java.math.BigInteger;
+
 public class problem015
 {
 	public static void main(String[] args)
 	{
-		int grid_size = 10; //length of one side (max 10)
-		int n = grid_size*2;
-		int k = grid_size;
+		int grid_size = 20; //length of one side (max 10)
+		long n = grid_size*2;
+		long k = grid_size;
 
-		long answer = factorial(n)/(factorial(k)*factorial(n-k));
+		BigInteger numerator = factorial(n);
+		BigInteger denominator = factorial(k).multiply(factorial(n-k));
+		BigInteger answer = numerator.divide(denominator);
 		System.out.println(answer);
 
 	}
 
-	public static long factorial(int num)
+	public static BigInteger factorial(long num)
 	{
-		long result = 1;
+		BigInteger temp_num = BigInteger.valueOf(1);
 
-		if (num > 1)
+		for (long i = 1; i <= num; i++)
 		{
-			for (int i=1; i<=num; i++)
-				result=i*result;
+			temp_num = temp_num.multiply(BigInteger.valueOf(i));
 		}
 
-		return result;
+		return temp_num;
 	}
 }
